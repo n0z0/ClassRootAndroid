@@ -81,8 +81,8 @@ git tag v1.0.0
 git push origin v1.0.0
 ```
 Setelah proses workflow selesai, APK dapat langsung diunduh pengguna dari halaman GitHub Releases repositori:
-- `ClassRoot-v1.0.0.apk` (Release APK siap pasang)
-- `ClassRoot-v1.0.0-debug.apk` (Debug APK)
+- `ClassRoot.apk` (Release APK siap pasang)
+- `ClassRoot-debug.apk` (Debug APK)
 - `checksums.txt` (Verifikasi integritas berkas SHA-256)
 
 ### Memasang ke Perangkat Android
