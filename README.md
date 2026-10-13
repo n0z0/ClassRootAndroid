@@ -64,6 +64,27 @@ Berkas APK yang dihasilkan berada di:
 app/build/outputs/apk/debug/app-debug.apk
 ```
 
+### Membangun APK Release
+Gunakan perintah Gradle Wrapper:
+```powershell
+.\gradlew assembleRelease
+```
+Berkas APK yang dihasilkan berada di:
+```
+app/build/outputs/apk/release/app-release.apk
+```
+
+### Otomatisasi Rilis APK via GitHub Actions
+Repositori ini dilengkapi GitHub Actions Workflow (`.github/workflows/release.yml`). Setiap kali tag versi di-push (misal `v1.0.0`), APK Release dan Debug akan dibangun secara otomatis dan langsung dipublikasikan ke tab **Releases**:
+```powershell
+git tag v1.0.0
+git push origin v1.0.0
+```
+Setelah proses workflow selesai, APK dapat langsung diunduh pengguna dari halaman GitHub Releases repositori:
+- `ClassRoot-v1.0.0.apk` (Release APK siap pasang)
+- `ClassRoot-v1.0.0-debug.apk` (Debug APK)
+- `checksums.txt` (Verifikasi integritas berkas SHA-256)
+
 ### Memasang ke Perangkat Android
 Hubungkan perangkat Android dengan USB Debugging aktif, lalu jalankan:
 ```powershell
@@ -71,7 +92,7 @@ Hubungkan perangkat Android dengan USB Debugging aktif, lalu jalankan:
 ```
 Atau menggunakan ADB langsung:
 ```powershell
-adb install -r app/build/outputs/apk/debug/app-debug.apk
+adb install -r app/build/outputs/apk/release/app-release.apk
 ```
 
 ---
